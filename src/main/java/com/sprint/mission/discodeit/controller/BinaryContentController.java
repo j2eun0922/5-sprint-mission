@@ -17,11 +17,11 @@ import java.util.UUID;
 public class BinaryContentController {
     private final BinaryContentService binaryContentService;
 
-    @RequestMapping(value = "/find/{id}", method = RequestMethod.GET)
-    public ResponseEntity<ApiResult<BinaryContent>> findById(@PathVariable("id") UUID id) {
+    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    public ResponseEntity<BinaryContent> findById(@RequestParam("binaryContentId") UUID id) {
         BinaryContent binaryContent = binaryContentService.find(id);
 
-        return ResponseEntity.status(HttpStatus.OK).body(ApiResult.ok(binaryContent));
+        return ResponseEntity.status(HttpStatus.OK).body(binaryContent);
     }
 
     @RequestMapping(value = "/findAllByIdIn", method = RequestMethod.GET)

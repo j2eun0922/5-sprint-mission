@@ -73,9 +73,9 @@ public class UserController {
     }
 
     @RequestMapping(value = "/findAll", method = RequestMethod.GET)
-    public ResponseEntity<ApiResult<List<UserDto>>> findAllUser() {
+    public ResponseEntity<List<UserDto>> findAllUser() {
         List<UserDto> users = userService.findAll();
-        return ResponseEntity.status(HttpStatus.OK).body(ApiResult.ok(users));
+        return ResponseEntity.status(HttpStatus.OK).body(users);
     }
 
     @RequestMapping(value = "/updateLogin/{id}", method = RequestMethod.PATCH,
