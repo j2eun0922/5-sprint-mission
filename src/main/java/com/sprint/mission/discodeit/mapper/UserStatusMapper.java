@@ -7,7 +7,7 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface UserStatusMapper {
-    @Mapping(target = "userId", source = "user.id")
-    @Mapping(target = "channelId", source = "channel.id")
-    UserStatusDto toDto(UserStatus userStatus);
+
+  @Mapping(target = "userId", source = "user.id")
+  UserStatusDto toDto(UserStatus userStatus);
 }
